@@ -1,0 +1,29 @@
+{
+    "name": "Action script injection demo",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_title": "Click to show an alert",
+        "default_popup": "popup.html",
+        "default_icon":{
+            "16":"/img/joker16.png",
+            "48":"/img/joker48.png",
+            "128":"/img/joker128.png"
+        }
+    },
+    "icons":{
+        "16":"/img/joker16.png",
+        "48":"/img/joker48.png",
+        "128":"/img/joker128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "storage"
+    ],
+    "content_scripts":[{
+        "matches":["<all_urls>"],
+        "js":["background.js"]
+    }]
+}

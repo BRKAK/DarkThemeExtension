@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        body {
+            font-family: 'Indie Flower', cursive;
+            background: #182818;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .container {
+            color: whitesmoke;
+            background-color: #303030;
+        }
+
+        .titleText {
+            line-height: 1.2rem;
+            justify-content: center;
+            text-align: center;
+            height: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .settings {
+            width: 5rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .settingsContainer {
+            margin-top: 5rem;
+            position: relative;
+            line-height: 5rem;
+            vertical-align: middle;
+            height: 2.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 2rem;
+            background-color: #D8B03A;
+            opacity: 0.8;
+        }
+
+        .row {
+            border-radius: 1rem;
+            color: black;
+            text-align: center;
+            justify-content: center;
+            line-height: 2rem;
+            vertical-align: middle;
+        }
+
+        .circle {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: #ffce3c;
+            position: absolute;
+            left: 0;
+
+        }
+
+        .settings:hover {
+            cursor: pointer;
+        }
+
+        @keyframes moveCircleRight {
+            0% {
+                width: 2.5rem;
+                left: 0;
+                background-color: #ffce3c;
+            }
+
+            50% {
+                width: 3rem;
+            }
+
+            100% {
+                left: 100%;
+                width: 2.5rem;
+                transform: translateX(-100%);
+                background-color: #01b6b6;
+            }
+        }
+
+        @keyframes backgroundYellow {
+            from {
+                background-color: #D8B03A;
+            }
+
+            to {
+                background-color: #018b8b;
+            }
+        }
+
+        @keyframes backgroundBlue {
+            from {
+                background-color: #018b8b;
+            }
+
+            to {
+                background-color: #D8B03A;
+            }
+        }
+
+        @keyframes moveCircleLeft {
+            0% {
+                width: 2.5rem;
+                right: 100%;
+                transform: translateX(100%);
+                background-color: #01b6b6;
+            }
+
+            50% {
+                width: 3rem;
+            }
+
+            100% {
+                width: 2.5rem;
+                right: 0;
+                background-color: #ffce3c;
+            }
+        }
+    </style>
+</head>
+
+<body class="popup">
+    <div class="container">
+        <div class="title" style="line-height: 100%;">
+            <p class="titleText">
+                Sadece bu butonu yana kaydırarak açıp kapatabilirsin
+            </p>
+        </div>
+        <div class="settings">
+            <div class="settingsContainer">
+                <div class="row">On</div>
+                <div class="row">Off</div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="appOn.js"></script>
+<script src="appOff.js"></script>
+<script src="popup.js"></script>
+
+</html>
