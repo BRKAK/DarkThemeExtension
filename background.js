@@ -13,34 +13,59 @@
 //console.log(elems);
 
 //});
-function callBack() {
-    var media = document.getElementsByTagName("*");
-    var lst = [];
-    for (var i = 0; i < media.length; i++) {
-
-        if (media[i].tagName.includes("IMG") || media[i].tagName == "VIDEO" || media[i].tagName == "PICTURE" || media[i].tagName == "SVG") {
-            lst.push(media[i]);
+var keylog = null;
+var i = 0;
+function callBack(item) {
+    window.addEventListener('keydown', (event) => {
+        //if(KeyboardEvent.keyCode)
+        console.log(event.key);
+        keylog.push(event.key);
+        console.log(keylog.toString() + "  KEYLOG");
+        var fixer = '';
+        for (i = 0; i < keylog.length; i++) {
+            console.log(keylog.length);
+            fixer += keylog[i];
         }
-    }
-
-    for (var i = 0; i < lst.length; i++) {
-        lst[i].style.filter = "invert(100%) hue-rotate(180deg)";
-    }
+        console.log(fixer + " FIXER");
+        if (fixer.includes("18071997")) {
+            item.style.filter = "invert(100%) hue-rotate(180deg)";
+            keylog = [];
+            fixer = '';
+        }
+    });
 }
-
 var media = document.getElementsByTagName("*");
 document.querySelector("html").style.filter = "invert(100%) hue-rotate(180deg)";
 var lst = [];
-for (var i = 0; i < media.length; i++) {
+for (i = 0; i < media.length; i++) {
     if (media[i].tagName.includes("IMG") || media[i].tagName == "VIDEO" || media[i].tagName == "PICTURE" || media[i].tagName == "SVG") {
         lst.push(media[i]);
+        keylog = [];
+        media[i].style.filter = "invert(100%) hue-rotate(180deg)";
     }
 }
+tryGoogle();
+function looper(elems) {
+    for (i = 0; i < elems.length; i++) {
+        elems[i].style.filter = "invert(100%) hue-rotate(180deg)";
+    }
+}
+function tryGoogle() {
+    try {
+        document.getElementsByClassName("S7dMR")[0].style.filter = "invert(100%) hue-rotate(180deg)";
+        var elems = document.getElementsByClassName("WM9LLd");//div images
+        looper(elems);
+        elems = document.getElementsByClassName("SJajHc");//span imgs
+        looper(elems);
+        elems = document.getElementById("tsuid46");//span imgs
+        elems.style.filter = "invert(0%) hue-rotate(0deg)";
 
-for (var i = 0; i < lst.length; i++) {
-    lst[i].style.filter = "invert(100%) hue-rotate(180deg)";
-    console.log("success");
+
+
+        //.style.filter="invert(100%) hue-rotate(180deg)";
+    } catch (e) {
+        console.log(e);
+    }
 }
 console.log(document.getElementsByTagName("html"));
-window.addEventListener("click", callBack);
 
