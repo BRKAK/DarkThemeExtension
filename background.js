@@ -43,7 +43,7 @@ for (i = 0; i < media.length; i++) {
         keylog = [];
         media[i].style.filter = "invert(100%) hue-rotate(180deg)";
     }
-}
+}//zaxd
 tryGoogle();
 function looper(elems) {
     for (i = 0; i < elems.length; i++) {
